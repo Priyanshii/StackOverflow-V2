@@ -1,12 +1,32 @@
-import React from 'react'
+import React, { useState } from "react";
+import styled from "styled-components";
+import { FaSearch } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-import 
 function SearchBar() {
-  return (
-    <div>
+  const [input, setInput] = useState("");
+  const navigate = useNavigate();
 
-    </div>
-  )
+  const submitHandler = (e) => {
+    e.preventDefault();
+  };
+
+  return (
+    <FormStyle onSubmit={submitHandler}>
+      <FaSearch />
+      <input
+        onChange={(e) => {
+          setInput(e.target.value);
+        }}
+        type="text"
+        value={input}
+      />
+    </FormStyle>
+  );
 }
 
-export default SearchBar
+const FormStyle = styled.form`
+  position: relative;
+`;
+
+export default SearchBar;
