@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FaSearch } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 function SearchBar() {
   const [input, setInput] = useState("");
-  const navigate = useNavigate();
 
   const submitHandler = (e) => {
     e.preventDefault();

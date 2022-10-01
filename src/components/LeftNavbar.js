@@ -15,7 +15,7 @@ function LeftNavbar() {
         <img src="/images/logo-stackoverflow.svg" alt="StackOverflow" />
       </Logo>
       <NavMenu>
-        <SLink to={"/"}>
+        <SLink to={"/questions/interesting"}>
           <BiQuestionMark />
           <span>QUESTIONS</span>
         </SLink>
@@ -71,18 +71,23 @@ const Nav = styled.nav`
   position: relative;
   top: 0;
   left: 0;
-  width: 6rem;
-  height: auto;
+  width: 16rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 1rem;
+  align-items: center;
+  padding: 2rem;
   border-right: 1px solid transparent;
-  box-shadow: 3px 0px 2px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 7px 0px 7px -4px rgba(0, 0, 0, 0.2);
+
+  /* @media (max-width: 768px) {
+    display: none;
+  } */
 `;
 const Logo = styled.a`
   padding: 0;
-  width: 6rem;
+  width: 9rem;
   height: auto;
   font-size: 0;
   text-decoration: none;
@@ -104,48 +109,50 @@ const NavMenu = styled.div`
 `;
 
 const SLink = styled(NavLink)`
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  margin: 5px;
+  margin: 0.4rem;
   cursor: pointer;
-  padding: 2px 2px;
-  padding-left: 12px;
-  text-align: center;
+  padding: 4px 4px;
+  padding-left: 20px;
   border-left: 1px solid white;
   transition: all 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 
   svg {
-    color: black;
-    font-size: 0.4rem;
+    color: #7c7a7a;
+    font-size: 0.8rem;
   }
   span {
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 6px;
+    font-size: 0.6rem;
     font-family: "Joan", serif;
-    color: black;
-    padding-left: 6px;
-    text-align: center;
+    color: #7c7a7a;
+    padding-left: 10px;
+    vertical-align: middle;
     letter-spacing: 0.1px;
-    font-weight: 400;
+    font-weight: 600;
+    height: auto;
 
     sup {
-      color: #f8aa19;
-      font-size: 4px;
-      font-weight: bold;
+      color: #df7008;
+      font-size: 9px;
+      font-weight: 500;
     }
   }
 
   &:hover {
-    border-left: 1px solid #f8aa19;
-    box-shadow: 4px 0px 3px -3px #f8aa19 inset;
+    border-left: 2px solid #df7008;
+    box-shadow: 4px 0px 4px -4px #df7008 inset;
     svg {
-      color: orange;
+      color: #df7008;
     }
     span {
-      font-weight: bold;
+      font-weight: bolder;
+      color: black;
     }
   }
 `;
