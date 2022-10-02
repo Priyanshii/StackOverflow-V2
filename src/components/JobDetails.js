@@ -53,7 +53,7 @@ const Card = styled.div`
     font-weight: 500;
     color: #868585;
     padding: 2px;
-    font-size: 14px;
+    font-size: 13px;
   }
   p {
     font-size: 12px;
@@ -76,7 +76,7 @@ const Card = styled.div`
     border: 0px solid #e6e0e0;
   }
 `;
-const JobLocation = styled.div`
+const JobLocation = styled.section`
   display: flex;
   align-items: flex-start;
   color: #9c9b9b;
@@ -100,7 +100,8 @@ const JobType = styled.div`
   font-size: 12px;
   padding: 2px;
   padding-left: 8px;
-
+  display: flex;
+  align-items: center;
   svg {
     font-size: 12px;
   }
@@ -108,13 +109,14 @@ const JobType = styled.div`
     padding-left: 2px;
   }
 `;
-const TagSection = styled.div`
+const TagSection = styled.section`
   padding: 2px;
   span {
     font-size: 12px;
     border: 1px solid #9c9b9b;
     border-radius: 10px;
     padding: 1px 4px;
+    padding-bottom: 1px;
     margin: 4px;
     background-color: white;
     color: #9c9b9b;

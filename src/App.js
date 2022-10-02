@@ -6,11 +6,13 @@ import QuestionsContainer from "./pages/QuestionsContainer";
 import RightNavbar from "./components/RightNavbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
+import Header from "./components/Header";
 function App() {
   return (
     <div className="App">
-      <MainContainer>
-        <Router>
+      <Router>
+        {/* <Header /> */}
+        <MainContainer>
           <LeftNavbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -18,8 +20,8 @@ function App() {
             <Route path="/jobs" element={<JobContainer />} />
           </Routes>
           <RightNavbar />
-        </Router>
-      </MainContainer>
+        </MainContainer>
+      </Router>
     </div>
   );
 }
@@ -33,5 +35,6 @@ const MainContainer = styled.div`
   top: 0;
   left: 0;
   right: 0;
+  overflow: scroll;
 `;
 export default App;

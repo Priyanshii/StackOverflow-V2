@@ -26,6 +26,7 @@ function SearchBar() {
 
 const FormStyle = styled.form`
   position: relative;
+  display: flex;
 `;
 
 export default SearchBar;

@@ -68,15 +68,15 @@ function LeftNavbar() {
 }
 
 const Nav = styled.nav`
-  position: relative;
+  position: sticky;
   top: 0;
   left: 0;
-  width: 16rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  flex-basis: 16rem;
   padding: 2rem;
   border-right: 1px solid transparent;
   box-shadow: 7px 0px 7px -4px rgba(0, 0, 0, 0.2);
@@ -129,7 +129,6 @@ const SLink = styled(NavLink)`
     text-transform: uppercase;
     text-decoration: none;
     font-size: 0.6rem;
-    font-family: "Joan", serif;
     color: #7c7a7a;
     padding-left: 10px;
     vertical-align: middle;

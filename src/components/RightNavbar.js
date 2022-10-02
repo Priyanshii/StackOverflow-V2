@@ -12,9 +12,9 @@ function RightNavbar() {
         <Jobs>
           {jobs.map((job) => {
             return (
-              <>
-                <JobDetails key={job.id} {...job} />
-              </>
+              <React.Fragment key={job.id}>
+                <JobDetails {...job} />
+              </React.Fragment>
             );
           })}
         </Jobs>
@@ -24,15 +24,15 @@ function RightNavbar() {
 }
 
 const MainContainer = styled.div`
-  width: 30rem;
   height: auto;
-  position: absolute;
+  position: relative;
   top: 4rem;
   right: 0rem;
   margin-right: 0rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  flex-basis: 30rem;
   margin: 0rem;
   background-color: rgba(236, 236, 236, 0.2);
   padding: 2.5rem;
