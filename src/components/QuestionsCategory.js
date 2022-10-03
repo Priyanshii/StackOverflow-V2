@@ -14,11 +14,12 @@ const QuestionsCategory = () => {
   );
 };
 const List = styled.section`
+  grid-area: categories;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   margin-top: 1rem;
-  padding: 2rem;
-  height: auto;
+  padding: 1rem;
 `;
 const SLink = styled(NavLink)`
   padding: 4px 6px 4px 6px;
@@ -28,8 +29,7 @@ const SLink = styled(NavLink)`
   font-size: 14px;
   color: #9c9a9a;
   margin: 2px 12px;
-  height: auto;
-
+  height: 2rem;
   &.active {
     background-color: orange;
     color: white;

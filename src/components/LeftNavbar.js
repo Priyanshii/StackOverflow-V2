@@ -3,7 +3,11 @@ import styled from "styled-components";
 import { BiQuestionMark, BiBookmark } from "react-icons/bi";
 import { IoBagOutline } from "react-icons/io5";
 import { GrDocumentText } from "react-icons/gr";
-import { HiOutlineTag, HiOutlineSpeakerphone } from "react-icons/hi";
+import {
+  HiOutlineTag,
+  HiOutlineSpeakerphone,
+  HiOutlineDocumentText,
+} from "react-icons/hi";
 import { AiOutlineUser } from "react-icons/ai";
 import { FaStackExchange, FaInbox } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
@@ -26,7 +30,7 @@ function LeftNavbar() {
         </SLink>
 
         <SLink to={"/"}>
-          <GrDocumentText />
+          <HiOutlineDocumentText />
           <span>
             DOCUMENTATION
             <sup>NEW</sup>
@@ -68,15 +72,16 @@ function LeftNavbar() {
 }
 
 const Nav = styled.nav`
-  position: sticky;
+  grid-area: leftNavBar;
+  position: relative;
   top: 0;
   left: 0;
+  /* width: fit-content; */
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  flex-basis: 16rem;
   padding: 2rem;
   border-right: 1px solid transparent;
   box-shadow: 7px 0px 7px -4px rgba(0, 0, 0, 0.2);

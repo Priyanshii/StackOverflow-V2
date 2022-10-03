@@ -1,28 +1,47 @@
 import React from "react";
 import { IoMdHelpBuoy } from "react-icons/io";
-// import { HiComputerDesktop } from "react-icons/hi2";
+import { BiDesktop } from "react-icons/bi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import SearchBar from "./SearchBar";
 import styled from "styled-components";
 function Header() {
   return (
-    <Container>
+    <HeaderContainer>
       <SearchBar />
-      <IoMdHelpBuoy />
-      <span>Help</span>
-      {/* <HiComputerDesktop /> */}
-      <span>Tour</span>
-      <RiArrowDropDownLine />
-    </Container>
+      <HeaderRight>
+        <IoMdHelpBuoy />
+        <span>Help</span>
+        <BiDesktop />
+        <span>Tour</span>
+        <RiArrowDropDownLine />
+      </HeaderRight>
+    </HeaderContainer>
   );
 }
 
-const Container = styled.div`
+const HeaderContainer = styled.div`
+  grid-area: headerArea;
   display: flex;
-  position: sticky;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
   top: 0rem;
-  right: 0rem;
   height: 3rem;
+  width: 100%;
+`;
+const HeaderRight = styled.div`
+  display: flex;
+  align-items: center;
+  height: auto;
+  font-size: 14px;
+  color: #9c9a9a;
+  svg {
+    margin-left: 12px;
+  }
+  span {
+    margin-left: 2px;
+    height: auto;
+  }
 `;
 
 export default Header;

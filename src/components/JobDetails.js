@@ -74,6 +74,7 @@ const Card = styled.div`
     width: 100%;
     height: 0px;
     border: 0px solid #e6e0e0;
+    margin: 0px 0px;
   }
 `;
 const JobLocation = styled.section`
@@ -115,8 +116,7 @@ const TagSection = styled.section`
     font-size: 12px;
     border: 1px solid #9c9b9b;
     border-radius: 10px;
-    padding: 1px 4px;
-    padding-bottom: 1px;
+    padding: 1px 4px 1px;
     margin: 4px;
     background-color: white;
     color: #9c9b9b;

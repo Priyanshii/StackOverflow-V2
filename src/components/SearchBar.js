@@ -19,6 +19,7 @@ function SearchBar() {
         }}
         type="text"
         value={input}
+        placeholder="Search"
       />
     </FormStyle>
   );
@@ -27,6 +28,22 @@ function SearchBar() {
 const FormStyle = styled.form`
   position: relative;
   display: flex;
+  justify-content: flex-start;
+  color: #9c9a9a;
+  margin: 1rem;
+  padding: 4px;
+  svg {
+    font-size: 20px;
+    padding: 4px;
+  }
+
+  input {
+    border: none;
+    font-size: 12px;
+    padding: 4px;
+    text-decoration: none;
+    outline: none;
+  }
 `;
 
 export default SearchBar;

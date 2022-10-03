@@ -19,7 +19,7 @@ function QuestionsContainer() {
 
   const getQuestions = async (name) => {
     const api = await fetch(
-      `https://api.stackexchange.com/2.3/questions?page=1&pagesize=8&order=desc&sort=activity&site=stackoverflow`
+      `https://api.stackexchange.com/2.3/questions?page=1&pagesize=5&order=desc&sort=activity&site=stackoverflow`
     );
     const data = await api.json();
     setQuestionsList(data.items);
@@ -27,7 +27,7 @@ function QuestionsContainer() {
 
   const getFeaturedQuestions = async () => {
     const api = await fetch(
-      `https://api.stackexchange.com/2.3/questions/featured?page=1&pagesize=8&order=desc&sort=activity&site=stackoverflow`
+      `https://api.stackexchange.com/2.3/questions/featured?page=1&pagesize=5&order=desc&sort=activity&site=stackoverflow`
     );
     const data = await api.json();
     setQuestionsList(data.items);
@@ -47,7 +47,7 @@ function QuestionsContainer() {
         })}
       </QuestionCard>
       <Footer>
-        <h3>Looking for more?</h3>
+        <h2>Looking for more?</h2>
         <p>
           Browse the <SLink>complete list of questions</SLink>, or{" "}
           <SLink>popular tags</SLink>. Help us answer unanswered questions.
@@ -57,51 +57,54 @@ function QuestionsContainer() {
   );
 }
 const Container = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
+  grid-template-rows: 0.5fr 0.5fr auto auto;
+  grid-template-areas:
+    "headerarea"
+    "categories"
+    "mainContent"
+    "footerArea";
 `;
 const Header = styled.header`
+  grid-area: headerarea;
   font-size: 20px;
   font-weight: 500;
   color: #9c9a9a;
   padding: 2rem;
-  flex: 0 0 50px;
+  height: 1rem;
 `;
 
 const QuestionCard = styled.div`
-  flex: auto;
+  grid-area: mainContent;
   display: flex;
   flex-direction: column;
   width: 100%;
   ::before {
     content: "";
-    width: 100%;
     height: 0px;
     border: 0.1px solid #e6e0e0;
-    margin: 0 10px;
+    margin: 10px;
   }
 `;
 const Footer = styled.section`
+  grid-area: footerArea;
   text-align: center;
-  margin: 5rem;
+  margin: 1rem;
   padding: 1rem;
-  text-align: center;
-  vertical-align: bottom;
-  align-self: flex-end;
-  flex: auto;
-  h3 {
+  vertical-align: middle;
+  height: 5rem;
+  h2 {
     font-weight: 500;
     color: #5f5e5e;
   }
 
   p {
-    font-size: 12px;
+    font-size: 14px;
   }
 `;
 
 const SLink = styled(NavLink)`
+  font-size: 14px;
   text-decoration: none;
   color: #24a6c7;
 `;

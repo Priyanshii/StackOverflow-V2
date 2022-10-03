@@ -84,14 +84,18 @@ const TagSection = styled.section`
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 0.4rem;
+  max-height: fit-content;
+  padding: 2px;
   span {
     font-size: 12px;
     border: 1px solid #9c9b9b;
     border-radius: 10px;
-    padding: 1px 4px;
+    padding: 1px 4px 1px;
     margin: 4px;
     background-color: white;
     color: #9c9b9b;
+    height: fit-content;
+    vertical-align: middle;
   }
 `;
 const BasicInfo = styled.div`
