@@ -20,6 +20,7 @@ const List = styled.section`
   align-items: center;
   margin-top: 1rem;
   padding: 1rem;
+  height: fit-content;
 `;
 const SLink = styled(NavLink)`
   padding: 4px 6px 4px 6px;

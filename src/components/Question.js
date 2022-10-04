@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { BiLike, BiComment } from "react-icons/bi";
-import { FaRegEye } from "react-icons/fa";
+import { FaRegEye, FaTransgender } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 const Question = ({
   question_id,
   is_answered,
@@ -18,11 +19,11 @@ const Question = ({
   let time = d.getTime();
 
   const CreationTime = time / 1000 - creation_date;
-
+  console.log(is_answered);
   return (
     <Wrapper>
       <LeftSection>
-        <h4>{title}</h4>
+        <Slink to={{ pathname: link, target: "_blank" }}>{title}</Slink>
         <TagSection>
           {tags.map((item) => {
             return (
@@ -71,14 +72,14 @@ const LeftSection = styled.section`
   flex-direction: column;
   align-items: flex-start;
   height: auto;
-
-  h4 {
-    font-weight: 500;
-    color: #24a6c7;
-    font-size: 14px;
-    padding: 2px;
-    margin-bottom: 0.4rem;
-  }
+`;
+const Slink = styled(NavLink)`
+  font-weight: 500;
+  color: #24a6c7;
+  font-size: 14px;
+  padding: 2px;
+  margin-bottom: 0.4rem;
+  text-decoration: none;
 `;
 const TagSection = styled.section`
   display: flex;
@@ -119,6 +120,7 @@ const RightSection = styled.div`
   display: flex;
   justify-content: center;
   padding: 2px;
+  height: fit-content;
 `;
 const Info = styled.div`
   display: flex;
@@ -128,6 +130,12 @@ const Info = styled.div`
   padding: 10px;
   margin: 4px;
   color: #7c7c7c;
+  span {
+    padding-bottom: 10px;
+  }
+  svg {
+    padding-bottom: 10px;
+  }
 `;
 const AnswerInfo = styled.div`
   display: flex;
@@ -137,9 +145,15 @@ const AnswerInfo = styled.div`
   padding: 10px;
   margin: 4px;
   color: #7c7c7c;
-
-  .active {
+  span {
+    padding-bottom: 10px;
+  }
+  svg {
+    padding-bottom: 10px;
+  }
+  &.active {
     color: green;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 `;
 export default Question;

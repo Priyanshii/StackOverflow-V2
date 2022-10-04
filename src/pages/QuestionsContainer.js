@@ -22,6 +22,7 @@ function QuestionsContainer() {
       `https://api.stackexchange.com/2.3/questions?page=1&pagesize=5&order=desc&sort=activity&site=stackoverflow`
     );
     const data = await api.json();
+    console.log(data.items);
     setQuestionsList(data.items);
   };
 
@@ -57,13 +58,9 @@ function QuestionsContainer() {
   );
 }
 const Container = styled.div`
-  display: grid;
-  grid-template-rows: 0.5fr 0.5fr auto auto;
-  grid-template-areas:
-    "headerarea"
-    "categories"
-    "mainContent"
-    "footerArea";
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 const Header = styled.header`
   grid-area: headerarea;
@@ -72,21 +69,17 @@ const Header = styled.header`
   color: #9c9a9a;
   padding: 2rem;
   height: 1rem;
+  flex-basis: 5rem;
 `;
 
 const QuestionCard = styled.div`
+  flex-basis: auto;
   grid-area: mainContent;
   display: flex;
   flex-direction: column;
   width: 100%;
-  ::before {
-    content: "";
-    height: 0px;
-    border: 0.1px solid #e6e0e0;
-    margin: 10px;
-  }
 `;
-const Footer = styled.section`
+const Footer = styled.div`
   grid-area: footerArea;
   text-align: center;
   margin: 1rem;
